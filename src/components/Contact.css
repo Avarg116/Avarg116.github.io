@@ -1,0 +1,13 @@
+.footer {
+  margin-top: var(--space-section);
+  padding: 20px 0 calc(28px + env(safe-area-inset-bottom));
+  border-top: var(--line);
+  font-size: 13px;
+  color: var(--text-faint);
+  text-align: center;
+}
+
+.footer__signoff {
+  margin-bottom: 2px;
+  color: var(--text-soft);
+}

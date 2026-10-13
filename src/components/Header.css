@@ -1,0 +1,160 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  /* Divider is invisible and fades in once scrolled */
+  border-bottom: 1px solid transparent;
+  padding-top: env(safe-area-inset-top);
+  transition: border-color 0.3s var(--ease);
+}
+
+.topbar.is-scrolled {
+  border-bottom-color: var(--border);
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  max-width: var(--page);
+  height: 48px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  font-size: 14px;
+}
+
+.topbar__crumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 4px 6px;
+  margin-left: -6px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background var(--hover-fast) var(--ease);
+}
+
+.topbar__crumb:hover {
+  background: var(--bg-hover);
+}
+
+.topbar__name {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Full name when there's room, first name on small phones */
+.topbar__name--full {
+  display: none;
+}
+
+.topbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.topbar__sections {
+  display: flex;
+  gap: 2px;
+}
+
+.topbar__link {
+  position: relative;
+  padding: 5px 8px;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text-soft);
+  transition: background var(--hover-fast) var(--ease), color var(--hover-fast) var(--ease);
+}
+
+.topbar__link:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+.topbar__link.is-active {
+  color: var(--accent);
+}
+
+.topbar__link.is-active:hover {
+  background: transparent;
+}
+
+.topbar__resume {
+  margin-left: 4px;
+  padding: 4px 9px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.topbar__resume {
+  transition:
+    background var(--hover-fast) var(--ease),
+    border-color var(--hover-fast) var(--ease),
+    color var(--hover-fast) var(--ease);
+}
+
+.topbar__resume:hover {
+  background: var(--accent-tint);
+  border-color: var(--accent-border);
+  color: var(--accent);
+}
+
+.topbar__icon {
+  width: 32px;
+  height: 32px;
+  margin-left: 2px;
+  margin-right: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--text-soft);
+  transition: background var(--hover-fast) var(--ease), color var(--hover-fast) var(--ease);
+}
+
+.topbar__icon:hover {
+  background: var(--bg-hover);
+  color: var(--text);
+}
+
+@media (min-width: 480px) {
+  .topbar__name--full {
+    display: block;
+  }
+  .topbar__name--short {
+    display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .topbar__nav {
+    gap: 4px;
+  }
+  .topbar__link {
+    padding: 5px 10px;
+  }
+}
+
+/* Very narrow phones */
+@media (max-width: 374px) {
+  .topbar__link {
+    padding: 5px 6px;
+  }
+  .topbar__resume {
+    margin-left: 2px;
+    padding: 4px 7px;
+  }
+}
