@@ -49,11 +49,12 @@ export const PROJECTS = [
     featured: true,
   },
   {
-    title: 'Project Two',
-    description: 'A data pipeline that [what it does], using Python and Pandas, deployed on AWS.',
-    stack: ['Python', 'Pandas', 'AWS'],
+    title: 'RAG Study Tool',
+    description:
+      'A PDF study assistant deployed on AWS: users upload notes or textbooks and get answers grounded only in their documents, cited to the exact page. A Claude Haiku agent searches PostgreSQL with pgvector and rewrites weak queries before Claude Sonnet writes the answer, raising top-1 retrieval accuracy from 62.5% to 95% over plain vector search on a 40-question benchmark.',
+    stack: ['Python', 'FastAPI', 'PostgreSQL', 'Claude API', 'React', 'Docker', 'AWS', 'GitHub Actions'],
     status: 'Completed',
-    repo: 'https://github.com/yourusername/project-two',
+    repo: 'https://github.com/Avarg116/rag-study-tool',
     live: '',
     image: '',
   },
